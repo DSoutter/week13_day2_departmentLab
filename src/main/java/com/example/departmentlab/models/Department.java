@@ -19,7 +19,7 @@ public class Department {
     private String name;
 
     @JsonIgnoreProperties({"department"})
-    @OneToMany(mappedBy = "department")
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private List<Employee> employees;
 
     public Department(String name) {
